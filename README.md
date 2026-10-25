@@ -1,11 +1,12 @@
 # Selenium Swipe Automation Experiment
 
-An educational Selenium script that explores multi-window browser automation, third-party login forms, modal handling, and repeated button interaction on Tinder.
+An educational Selenium script that explores multi-window browser automation, interactive sign-in, modal handling, and repeated button interaction on Tinder.
 
 ## What it demonstrates
 
 - Opening and controlling Chrome with Selenium
 - Switching between browser windows
+- Pausing for a user-completed interactive login
 - Locating controls with XPath and CSS selectors
 - Handling intercepted clicks and missing elements
 - Adding delays around dynamic page content
@@ -20,9 +21,8 @@ An educational Selenium script that explores multi-window browser automation, th
 pip install selenium
 ```
 
-## Security warning
+## Security
 
-> [!CAUTION]
-> The source currently contains a hardcoded login email and password. Treat the password as exposed: rotate it immediately, remove both values from public source/history, and never use committed credentials for browser automation.
+The script does not store or type Facebook credentials. Complete sign-in manually in the browser when prompted. Never commit account credentials or place a primary password in automation source.
 
-Use an approved interactive/OAuth flow or a protected secret store, and confirm that any automation complies with the services' terms before running it. Page XPaths are brittle and will require updates when the UI changes.
+Confirm that any automation complies with the services' current terms before running it. Page XPaths are brittle and may require updates when the UI changes.
