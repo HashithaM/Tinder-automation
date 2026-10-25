@@ -1,45 +1,28 @@
-# Tinder-automation
-This code automates tinder swiping
-This Python script automates interactions with the Tinder website using Selenium WebDriver. Here's a breakdown of the code:
+# Selenium Swipe Automation Experiment
 
-Setting up Selenium WebDriver:
+An educational Selenium script that explores multi-window browser automation, third-party login forms, modal handling, and repeated button interaction on Tinder.
 
-Imports necessary modules from Selenium.
-Configures the Chrome WebDriver with the executable path and options.
-Opening the Tinder website:
+## What it demonstrates
 
-Navigates to the Tinder website.
-Waits for 10 seconds to ensure the page loads completely (sleep(10)).
-Logging in with Facebook:
+- Opening and controlling Chrome with Selenium
+- Switching between browser windows
+- Locating controls with XPath and CSS selectors
+- Handling intercepted clicks and missing elements
+- Adding delays around dynamic page content
 
-Finds and clicks the login button on the Tinder homepage.
-Finds and clicks the Facebook login button on the login page.
-Switches to the Facebook login popup window.
-Enters email and password for Facebook login.
-Submits the login form by pressing the Enter key.
-Switching back to the Tinder window:
+## Requirements
 
-After logging in with Facebook, switches back to the main Tinder window.
-Handling location and notification permissions:
+- Python 3
+- Google Chrome and a compatible ChromeDriver
+- `selenium`
 
-Finds and clicks buttons to allow location and notifications.
-Handling cookies:
+```bash
+pip install selenium
+```
 
-Finds and clicks the button to accept cookies.
-Iterating through profiles and liking:
+## Security warning
 
-Enters a loop to perform actions on profiles (in this case, liking profiles).
-Inside the loop:
-Waits for 30 seconds before each like action (sleep(30)).
-Attempts to find and click the like button.
-Handles cases where there is an "ElementClickInterceptedException" (e.g., a popup intercepts the like button click) or "NoSuchElementException" (e.g., the like button hasn't loaded yet).
-Quitting the WebDriver:
+> [!CAUTION]
+> The source currently contains a hardcoded login email and password. Treat the password as exposed: rotate it immediately, remove both values from public source/history, and never use committed credentials for browser automation.
 
-After the loop ends, quits the WebDriver session.
-Overall, this script automates the process of logging into Tinder, granting necessary permissions, and continuously liking profiles. However, it's important to note that automating interactions with websites like Tinder may violate their terms of service, and it's crucial to use such scripts responsibly and ethically. Additionally, the script might need adjustments based on changes to the Tinder website structure or behavior.
-
-
-
-
-
-
+Use an approved interactive/OAuth flow or a protected secret store, and confirm that any automation complies with the services' terms before running it. Page XPaths are brittle and will require updates when the UI changes.
